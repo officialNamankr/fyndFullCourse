@@ -6,8 +6,8 @@ var app = require("./src/app.js")
 const PORT = process.env.PORT || 4000
 
 
+let server = http.createServer(app);
 
-
-app.listen(PORT,function(){
+server.listen(PORT,function(){
     console.log("Port started at port "+ PORT);
 }); 
