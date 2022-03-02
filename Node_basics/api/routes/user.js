@@ -2,15 +2,28 @@ const express = require("express");
 const router = express.Router();
 
 
+let users = [
+    {
+        name:"naman",
+        age:23
+    },
+    {
+        name:"Honey Singh",
+        age:40
+
+    }
+]
+
 
 router.get("/",(req,res,next)=>{
-    res.json({message:"This is coming from /user/user ............"});
+    res.json({users});
 });
 
 
-router.post("/Naman",(req,res,next)=>{
-    res.json({message:"This is post request from naman route"});
-})
+router.post("/",(req,res,next)=>{
+    users.push(req.body);
+    res.json({message:"sucessfully pushed the data"});
+});
 
 
 module.exports = router;

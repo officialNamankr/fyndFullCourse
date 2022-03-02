@@ -1,7 +1,14 @@
-const express = require("express")
+const express = require("express");
 const app = express();
 const userRouter = require("../api/routes/user.js");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
+//configuring bodyParser (used to parse request into formats like json)
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json());
+//configuring morgan (logger)
+app.use(morgan("dev"));
 
 
 
